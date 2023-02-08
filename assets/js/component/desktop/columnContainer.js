@@ -34,7 +34,7 @@ export default {
         const {data} = toRefs(props)
         const items = ref(Array.from(data.value, (item, idx) => ({
             key: idx,
-            src: './assets/src/img/' + item.thumbPath,
+            src: './assets/src/img/thumb/' + item.thumbPath,
             className: {
                 column: columnStyle.value(idx) + ' rounded-lg overflow-hidden',
                 img: 'w-full aspect-auto'
