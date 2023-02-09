@@ -14,7 +14,7 @@ export default {
                 :class="item.className.label + checkLabelClass(item.key)"
             >
                 
-                {{item.value}}
+                {{upperLetter(item.value)}}
                 
                 <input 
                     type="radio"
@@ -47,9 +47,10 @@ export default {
             value: tag,
             id: Method.uuidv4(),
             className: {
-                label: 'mx-1 p-2 rounded-md text-white hover:bg-slate-500 cursor-pointer'
+                label: 'mx-1 p-2 rounded-[0.25rem] text-white hover:bg-slate-400 cursor-pointer'
             }
         })))
+        const upperLetter = computed(() => (str) => str.split('').map((e, i) => i === 0 ? e.toUpperCase() : e).join(''))
 
 
         // class
@@ -58,7 +59,7 @@ export default {
 
 
         // computed
-        const checkLabelClass = computed(() => (key) => items.value[key].value === checked.value ? ' bg-slate-500' : ' bg-slate-400')
+        const checkLabelClass = computed(() => (key) => items.value[key].value === checked.value ? ' bg-slate-400' : ' bg-slate-300')
 
 
         // watch
@@ -72,7 +73,8 @@ export default {
             items,
             tagClass,
             inputClass,
-            checkLabelClass
+            checkLabelClass,
+            upperLetter
         }
     }
 }

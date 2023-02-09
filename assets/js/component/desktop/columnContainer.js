@@ -46,8 +46,8 @@ export default {
                 type: item.type,
                 src: thumbPath + item.thumbPath,
                 className: {
-                    column: 'rounded-md overflow-hidden',
-                    img: 'w-full aspect-auto'
+                    column: 'rounded-md overflow-hidden cursor-pointer',
+                    img: 'w-full aspect-auto hover:scale-105 duration-200'
                 }
             }))
         }
