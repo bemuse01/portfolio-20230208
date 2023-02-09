@@ -2,7 +2,7 @@ import Wrapper from './wrapper.js'
 
 export default {
     components: {
-        'wrapper': Wrapper
+        'ui-wrapper': Wrapper,
     },
     template: `
         <div 
@@ -10,7 +10,7 @@ export default {
             :style="layoutStyle"
         >
 
-            <wrapper />
+            <ui-wrapper class="ui-wrapper" />
 
         </div>
     `,
@@ -20,8 +20,10 @@ export default {
 
         // style
         const layoutStyle = ref({
+            position: 'relative',
             width: '100%',
-            height: '100%'
+            height: '100%',
+            // backgroundColor: '#eee'
         })
 
 

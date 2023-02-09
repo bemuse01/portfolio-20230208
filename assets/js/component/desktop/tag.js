@@ -47,19 +47,19 @@ export default {
             value: tag,
             id: Method.uuidv4(),
             className: {
-                label: 'mx-1 p-2 rounded-[0.25rem] text-white hover:bg-slate-400 cursor-pointer'
+                label: 'mx-1 p-2 rounded-[0.25rem] text-white hover:bg-gray-400 cursor-pointer'
             }
         })))
         const upperLetter = computed(() => (str) => str.split('').map((e, i) => i === 0 ? e.toUpperCase() : e).join(''))
 
 
         // class
-        const tagClass = 'ui-tag w-[100%] py-4 sticky top-0 bg-[rgba(255,255,255,0.9)] z-50'
+        const tagClass = 'ui-tag w-[100%] py-4 sticky top-0 bg-[#eeeeeeee] z-50'
         const inputClass = 'hidden'
 
 
         // computed
-        const checkLabelClass = computed(() => (key) => items.value[key].value === checked.value ? ' bg-slate-400' : ' bg-slate-300')
+        const checkLabelClass = computed(() => (key) => items.value[key].value === checked.value ? ' bg-gray-400' : ' bg-gray-300')
 
 
         // watch

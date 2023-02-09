@@ -17,7 +17,9 @@ export default {
             id="ui-wrapper"
             :class="wrapperClass"
             :style="wrapperStyle"
+            :ref="el => wrapper = el"
         >
+
             <ui-header />
             <ui-content>
                 <ui-tag />
@@ -27,15 +29,16 @@ export default {
         </div>
     `,
     setup(){
-        const {ref, onMounted} = Vue
+        const {ref} = Vue
 
 
         // variable
         const data = ref(Array.from(Data.repo))
+        const wrapper = ref()
 
 
         // class
-        const wrapperClass = 'w-[50%] mx-auto'
+        const wrapperClass = 'w-[60%] mx-auto'
 
 
         // style
@@ -43,13 +46,8 @@ export default {
         })
 
 
-        // mounted
-        onMounted(() => {
-
-        })
-
-
         return{
+            wrapper,
             wrapperStyle,
             wrapperClass,
             data

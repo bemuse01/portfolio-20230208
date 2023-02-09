@@ -41,11 +41,12 @@
     box-sizing: border-box;
 }
 body{
-    position: absolute;
     background: white;
     /* overflow-x: hidden; */
     overflow: auto;
     font-family: RobotoLight;
+    height: 100%;
+    background: #eee;
 }
 div#wrap{
     /* position: absolute;
