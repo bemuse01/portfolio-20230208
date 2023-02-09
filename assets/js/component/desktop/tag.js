@@ -21,7 +21,7 @@ export default {
                     :class="inputClass"
                     :value="item.value"
                     :name="item.name"
-                    v-model="picked"
+                    v-model="checked"
                 />
 
             </label>
@@ -30,10 +30,16 @@ export default {
     `,
     setup(){
         const {ref, watch, computed} = Vue
+        const {useStore} = Vuex
+
+
+        // store
+        const store = useStore()
+        // const getChecked = computed(() => store.getters['content/getCheckedTag'])
 
 
         // variable
-        const picked = ref('all')
+        const checked = ref('all')
         const {tags} = Data
         const items = ref(tags.map((tag, idx) => ({
             key: idx,
@@ -52,17 +58,17 @@ export default {
 
 
         // computed
-        const checkLabelClass = computed(() => (key) => items.value[key].value === picked.value ? ' bg-slate-500' : ' bg-slate-400')
+        const checkLabelClass = computed(() => (key) => items.value[key].value === checked.value ? ' bg-slate-500' : ' bg-slate-400')
 
 
         // watch
-        watch(picked, (cur, pre) => {
-            console.log(cur)
+        watch(checked, (cur, pre) => {
+            store.dispatch('content/setCheckedTag', cur)
         })
         
 
         return{
-            picked,
+            checked,
             items,
             tagClass,
             inputClass,

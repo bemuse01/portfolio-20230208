@@ -1,3 +1,5 @@
+import {thumbPath} from '../../data/config.js'
+
 export default {
     props: {
         data: Array,
@@ -10,9 +12,9 @@ export default {
         >
 
             <div
-                v-for="item in items"
+                v-for="(item, idx) in items"
                 :key="item.key"
-                :class="item.className.column"
+                :class="item.className.column + headColumnClass(idx)"
             >
                 <img
                     :src="item.src"
@@ -23,19 +25,37 @@ export default {
         </div>       
     `,
     setup(props){
-        const {ref, toRefs, computed} = Vue
+        const {ref, toRefs, computed, watch} = Vue
+        const {useStore} = Vuex
+
+
+        // store
+        const store = useStore()
+        const getCheckedTag = computed(() => store.getters['content/getCheckedTag'])
+
+
+        // method
+        const createItems = () => {
+            return Array.from(data.value, (item, idx) => ({
+                key: idx,
+                type: item.type,
+                src: thumbPath + item.thumbPath,
+                className: {
+                    column: 'rounded-lg overflow-hidden',
+                    img: 'w-full aspect-auto'
+                }
+            }))
+        }
 
 
         // variable
-        const {data} = toRefs(props)
-        const items = ref(Array.from(data.value, (item, idx) => ({
-            key: idx,
-            src: './assets/src/img/thumb/' + item.thumbPath,
-            className: {
-                column: (idx === 0 ? '' : 'mt-2') + ' rounded-lg overflow-hidden',
-                img: 'w-full aspect-auto'
-            }
-        })))
+        const headColumnClass = computed(() => (key) => key === 0 ? '' : ' mt-2')
+        const {data} = toRefs(props) 
+        const items = computed(() => {
+            return getCheckedTag.value === 'all' ? 
+            createItems() : 
+            createItems().filter(item => item.type === getCheckedTag.value)
+        })
 
 
         // class
@@ -47,9 +67,16 @@ export default {
         })
 
 
+        // watch
+        // watch(getCheckedTag, (cur, pre) => {
+        //     console.log(cur)
+        // })
+
+
         return{
             containerClass,
             containerStyle,
+            headColumnClass,
             items
         }
     }
