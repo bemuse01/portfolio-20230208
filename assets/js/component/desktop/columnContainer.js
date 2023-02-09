@@ -26,17 +26,13 @@ export default {
         const {ref, toRefs, computed} = Vue
 
 
-        // computed
-        const columnStyle = computed(() => (key) => key === 0 ? '' : 'mt-2')
-
-
         // variable
         const {data} = toRefs(props)
         const items = ref(Array.from(data.value, (item, idx) => ({
             key: idx,
             src: './assets/src/img/thumb/' + item.thumbPath,
             className: {
-                column: columnStyle.value(idx) + ' rounded-lg overflow-hidden',
+                column: (idx === 0 ? '' : 'mt-2') + ' rounded-lg overflow-hidden',
                 img: 'w-full aspect-auto'
             }
         })))
