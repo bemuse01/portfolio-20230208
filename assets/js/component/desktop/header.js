@@ -1,5 +1,5 @@
 import {imgPath} from '../../data/config.js'
-import Mark from '../../data/mark.js'
+import Data from '../../data/data.js'
 
 export default {
     template: `
@@ -7,33 +7,18 @@ export default {
             :class="headerClass"
         >
             <div
-                class="header-section"
-                :style="publicStyle"
-            >
-                <div
-                    :class="markClass"
-                >
-                    <span>
-                        <img
-                            :src="markSrc"
-                        />
-                    </span>
-                </div>
-            </div>
-
-            <div
-                class="header-section"
-                :style="{...publicStyle, ...linkStyle}"
+                :class="sectionClass"
             >
                 <div
                     :class="markClass"
                     v-for="item in items"
                     :key="item.key"
                 >
+
                     <span>
-                        <img
-                            :src="item.src"
-                        />
+                        <a :href="item.link" :target="item.target">
+                            <img :src="item.src" />
+                        </a>
                     </span>
 
                 </div>
@@ -47,36 +32,25 @@ export default {
 
 
         // variable
-        const {mark, links} = Mark
-        const markSrc = imgPath + mark
-        const items = ref(links.map((link, idx) => ({
+        const {marks} = Data
+        const items = ref(marks.map((mark, idx) => ({
             key: idx,
-            src: imgPath + link
+            src: imgPath + mark.imgPath,
+            link: mark.link,
+            target: mark.name === 'home' ? '' : '_blank'
         })))
 
 
         // class
         const headerClass = 'ui-header w-full py-5 text-2xl flex'
+        const sectionClass = 'header-section flex flex-1 justify-center gap-4'
         const markClass = 'w-[32px] rounded-[50%] overflow-hidden'
 
 
-        // style
-        const publicStyle = ref({
-            display: 'flex',
-            flex: '1'
-        })
-        const linkStyle = ref({
-            flexDirection: 'row-reverse',
-            gap: '12px'
-        })
-
-
         return{
-            publicStyle,
-            markSrc,
             markClass,
+            sectionClass,
             headerClass,
-            linkStyle,
             items
         }
     }

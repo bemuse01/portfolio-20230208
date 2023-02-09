@@ -30,8 +30,8 @@ export default {
         const {ref, onMounted} = Vue
 
 
-        // uiariable
-        const data = ref(Data.three.concat(Data.babylon))
+        // variable
+        const data = ref(Array.from(Data.repo))
 
 
         // class

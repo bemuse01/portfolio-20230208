@@ -1,0 +1,19 @@
+.ui-header a{
+    text-decoration: none;
+    border: none;
+}
+.ui-header a:link{
+    text-decoration: none;
+    border: none;
+}
+.ui-header a:active{
+    text-decoration: none;
+    border: none;
+}
+.ui-header a:visited{
+    text-decoration: none;
+    border: none;
+}
+.ui-header a img{
+    border: none;
+}
