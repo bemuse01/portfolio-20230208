@@ -21,10 +21,12 @@ export default {
         {
             type: 'three',
             thumbPath: 'three-3d-map.png',
+            link: ''
         },
         {
             type: 'three',
             thumbPath: 'three-no-title-20220526.png',
+            link: ''
         },
         {
             type: 'three',

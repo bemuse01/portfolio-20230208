@@ -1,6 +1,12 @@
 import {thumbPath} from '../../data/config.js'
+import Method from '../../method/method.js'
+
+import Column from './column.js'
 
 export default {
+    components: {
+        'column': Column
+    },
     props: {
         data: Array,
         gap: Number
@@ -8,10 +14,9 @@ export default {
     template: `
         <div
             :class="containerClass"
-            :style="containerStyle"
         >
 
-            <div
+            <column
                 v-for="(item, idx) in items"
                 :key="item.key"
                 :class="item.className.column + headColumnClass(idx)"
@@ -20,7 +25,7 @@ export default {
                     :src="item.src"
                     :class="item.className.img"
                 />
-            </div>
+            </column>
 
         </div>       
     `,
@@ -37,11 +42,11 @@ export default {
         // method
         const createItems = () => {
             return Array.from(data.value, (item, idx) => ({
-                key: idx,
+                key: Method.uuidv4(),
                 type: item.type,
                 src: thumbPath + item.thumbPath,
                 className: {
-                    column: 'rounded-lg overflow-hidden',
+                    column: 'rounded-md overflow-hidden',
                     img: 'w-full aspect-auto'
                 }
             }))
@@ -49,7 +54,7 @@ export default {
 
 
         // variable
-        const headColumnClass = computed(() => (key) => key === 0 ? '' : ' mt-2')
+        const headColumnClass = computed(() => (key) => key === 0 ? '' : ' mt-1')
         const {data} = toRefs(props) 
         const items = computed(() => {
             return getCheckedTag.value === 'all' ? 
@@ -59,23 +64,13 @@ export default {
 
 
         // class
-        const containerClass = 'columns-4 mx-auto gap-2'
-
-
-        // style
-        const containerStyle = ref({
-        })
-
-
-        // watch
-        // watch(getCheckedTag, (cur, pre) => {
-        //     console.log(cur)
-        // })
+        const containerClass = 'columns-4 mx-auto gap-1'
+        // const animClass = 'columns-4 mx-auto gap-1'
 
 
         return{
             containerClass,
-            containerStyle,
+            // animClass,
             headColumnClass,
             items
         }

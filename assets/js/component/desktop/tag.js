@@ -47,13 +47,13 @@ export default {
             value: tag,
             id: Method.uuidv4(),
             className: {
-                label: 'mx-1 p-2 rounded-xl text-white hover:bg-slate-500 cursor-pointer'
+                label: 'mx-1 p-2 rounded-md text-white hover:bg-slate-500 cursor-pointer'
             }
         })))
 
 
         // class
-        const tagClass = 'ui-tag w-[100%] py-4 sticky top-0 bg-[rgba(255,255,255,0.9)]'
+        const tagClass = 'ui-tag w-[100%] py-4 sticky top-0 bg-[rgba(255,255,255,0.9)] z-50'
         const inputClass = 'hidden'
 
 

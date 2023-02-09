@@ -1,4 +1,5 @@
 @import url('./header.css');
+@import url('./anim.css');
 
 /* @font-face {
     font-family: NotoSansDisplayLight;
@@ -28,6 +29,10 @@
     font-family: RobotoRegular;
     src: url('../src/font/Roboto-Regular.ttf');
 }
+@font-face {
+    font-family: RobotoLight;
+    src: url('../src/Roboto-Light.ttf');
+}
 
 
 *{
@@ -40,7 +45,7 @@ body{
     background: white;
     /* overflow-x: hidden; */
     overflow: auto;
-    font-family: RobotoRegular;
+    font-family: RobotoLight;
 }
 div#wrap{
     /* position: absolute;
