@@ -1,42 +1,72 @@
 import Data from '../../data/data.js'
 
+import Method from '../../method/method.js'
+
 export default {
     template: `
         <div
             :class="tagClass"
         >
 
-            <span
+            <label
                 v-for="item in items"
                 key="item.key"
-                :class="item.className.span"
-            >{{item.tagName}}
-            </span>
+                :class="item.className.label + checkLabelClass(item.key)"
+            >
+                
+                {{item.value}}
+                
+                <input 
+                    type="radio"
+                    :class="inputClass"
+                    :value="item.value"
+                    :name="item.name"
+                    v-model="picked"
+                />
+
+            </label>
 
         </div>
     `,
     setup(){
-        const {computed} = Vue
+        const {ref, watch, computed} = Vue
 
 
         // variable
-        const tags = ['all', ...Object.keys(Data)]
-        const items = computed(() => tags.map((tag, idx) => ({
+        const picked = ref('all')
+        const {tags} = Data
+        const items = ref(tags.map((tag, idx) => ({
             key: idx,
-            tagName: tag,
+            name: 'tag',
+            value: tag,
+            id: Method.uuidv4(),
             className: {
-                span: 'mx-1 bg-slate-400 p-2 rounded-xl text-white'
+                label: 'mx-1 p-2 rounded-xl text-white hover:bg-slate-500 cursor-pointer'
             }
         })))
 
 
         // class
         const tagClass = 'ui-tag w-[100%] py-4 sticky top-0 bg-[rgba(255,255,255,0.9)]'
+        const inputClass = 'hidden'
+
+
+        // computed
+        const checkLabelClass = computed(() => (key) => items.value[key].value === picked.value ? ' bg-slate-500' : ' bg-slate-400')
+
+
+        // watch
+        watch(picked, (cur, pre) => {
+            console.log(cur)
+        })
         
 
         return{
+            picked,
             items,
-            tagClass
+            tagClass,
+            inputClass,
+            checkLabelClass
         }
     }
 }

@@ -16,6 +16,7 @@ export default {
             link: 'https://steamcommunity.com/profiles/76561198121582231/myworkshopfiles/'
         }
     ],
+    tags: ['all', 'three', 'babylon'],
     repo: [
         {
             type: 'three',
