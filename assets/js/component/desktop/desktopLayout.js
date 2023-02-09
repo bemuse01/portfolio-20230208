@@ -1,8 +1,10 @@
 import Wrapper from './wrapper.js'
+import CanvasWrapper from './canvasWrapper.js'
 
 export default {
     components: {
         'ui-wrapper': Wrapper,
+        'canvas-wrapper': CanvasWrapper
     },
     template: `
         <div 
@@ -10,7 +12,8 @@ export default {
             :style="layoutStyle"
         >
 
-            <ui-wrapper class="ui-wrapper" />
+            <ui-wrapper id="ui-wrapper" />
+            <canvas-wrapper />
 
         </div>
     `,

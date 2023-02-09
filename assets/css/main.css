@@ -42,8 +42,8 @@
 }
 body{
     background: white;
-    /* overflow-x: hidden; */
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: RobotoLight;
     height: 100%;
     background: #eee;
