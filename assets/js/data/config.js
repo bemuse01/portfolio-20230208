@@ -1,8 +1,20 @@
+// path
 const imgPath = './assets/src/img/'
 const thumbPath = './assets/src/img/thumb/'
-const bgColor = '#eeeeee'
+
+// bg color
+const bgColor = '#383838'
 const mainContentBgColor = 'bg-neutral-800'
 const sidePannelBgColor = 'bg-neutral-900'
-const sidePannelWidth = '17rem'
 
-export {imgPath, thumbPath, bgColor, mainContentBgColor, sidePannelBgColor, sidePannelWidth}
+// size
+const sidePannelWidth = '17rem'
+const sideHeadHeight = '50px'
+
+// font
+const titleFontColor = 'text-white'
+const mainFontColor = 'text-slate-400'
+const mainFontColor2 = 'text-slate-300'
+const defaultFontStyle = 'py-0.5 text-[1rem] tracking-wider'
+
+export {imgPath, thumbPath, bgColor, mainContentBgColor, sidePannelBgColor, sidePannelWidth, sideHeadHeight, mainFontColor, titleFontColor, defaultFontStyle, mainFontColor2}

@@ -49,7 +49,8 @@ body{
     overflow-y: auto;
     font-family: RobotoLight;
     height: 100%;
-    background: #eee;
+    background: rgb(38, 38, 38);
+
 }
 div#wrap{
     /* position: absolute;

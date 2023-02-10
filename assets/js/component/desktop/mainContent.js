@@ -20,7 +20,7 @@ export default {
 
         
         // class
-        const mainClass = `absolute top-0 right-0 w-[calc(100%-${sidePannelWidth})] h-[auto] ${mainContentBgColor}`
+        const mainClass = `absolute top-0 right-0 w-[calc(100%-${sidePannelWidth})] h-[auto]`
 
 
         return{

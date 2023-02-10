@@ -1,17 +1,25 @@
+import SideTag from './sideTag.js'
+
 export default {
+    components: {
+        'side-tag': SideTag
+    },
     template: `
         <div 
-            class="tagStyle"
+            :class="contentClass"
         >
+
+            <side-tag />
+
         </div>
     `,
     setup(){
         // class
-        const tagStyle = 'side-tag flex-1'
+        const contentClass = 'side-content flex-1 p-4'
 
 
         return{
-            tagStyle
+            contentClass
         }
     }
 }

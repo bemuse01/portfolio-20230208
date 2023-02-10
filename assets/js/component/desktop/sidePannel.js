@@ -14,7 +14,7 @@ export default {
             :class="sideClass"
         >
             
-            <side-head / >
+            <!--<side-head />-->
             <side-content />
         
         </div>
