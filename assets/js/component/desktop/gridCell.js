@@ -1,6 +1,6 @@
 export default {
     template: `
-        <div :style="columnStyle">
+        <div :style="cellStyle">
             <slot />
         </div>
     `,
@@ -13,7 +13,7 @@ export default {
 
 
         // style
-        const columnStyle = ref({
+        const cellStyle = ref({
             opacity: '0',
             transform: 'translate(0, -2rem)',
             transition: '0.6s',
@@ -22,8 +22,8 @@ export default {
 
         // method
         const showColumn = () => {
-            columnStyle.value.transform = 'translate(0, 0)'
-            columnStyle.value.opacity = '1'
+            cellStyle.value.transform = 'translate(0, 0)'
+            cellStyle.value.opacity = '1'
         }
 
 
@@ -34,7 +34,7 @@ export default {
 
 
         return{
-            columnStyle
+            cellStyle
         }
     }
 }

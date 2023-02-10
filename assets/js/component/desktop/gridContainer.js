@@ -1,31 +1,28 @@
-import {thumbPath} from '../../data/config.js'
+import {thumbPath, mainContentBgColor} from '../../data/config.js'
 import Method from '../../method/method.js'
 
-import Column from './column.js'
+import Data from '../../data/data.js'
+import Cell from './gridCell.js'
 
 export default {
     components: {
-        'column': Column
-    },
-    props: {
-        data: Array,
-        gap: Number
+        'cell': Cell
     },
     template: `
         <div
             :class="containerClass"
         >
 
-            <column
+            <cell
                 v-for="(item, idx) in items"
                 :key="item.key"
-                :class="item.className.column + headColumnClass(idx)"
+                :class="item.className.cell"
             >
                 <img
                     :src="item.src"
                     :class="item.className.img"
                 />
-            </column>
+            </cell>
 
         </div>       
     `,
@@ -41,21 +38,20 @@ export default {
 
         // method
         const createItems = () => {
-            return Array.from(data.value, (item, idx) => ({
+            return Array.from(data.value, item => ({
                 key: Method.uuidv4(),
                 type: item.type,
                 src: thumbPath + item.thumbPath,
                 className: {
-                    column: 'rounded-md overflow-hidden cursor-pointer',
-                    img: 'w-full aspect-auto hover:scale-105 duration-200'
+                    cell: 'overflow-hidden aspect-square cursor-pointer',
+                    img: 'w-full aspect-auto hover:scale-105 duration-200 object-center'
                 }
             }))
         }
 
 
         // variable
-        const headColumnClass = computed(() => (key) => key === 0 ? '' : ' mt-1')
-        const {data} = toRefs(props) 
+        const data = ref(Data.repo)
         const items = computed(() => {
             return getCheckedTag.value === 'all' ? 
             createItems() : 
@@ -64,14 +60,11 @@ export default {
 
 
         // class
-        const containerClass = 'columns-4 mx-auto gap-1'
-        // const animClass = 'columns-4 mx-auto gap-1'
+        const containerClass = `w-full grid grid-cols-4 ${mainContentBgColor} overflow-y-auto overflow-x-hidden`
 
 
         return{
             containerClass,
-            // animClass,
-            headColumnClass,
             items
         }
     }

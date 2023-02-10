@@ -1,30 +1,23 @@
 import Data from '../../data/data.js'
 
-import Header from './header.js'
-import Tag from './tag.js'
-import ColumnContainer from './columnContainer.js'
-import Content from './content.js'
+import SidePannel from './sidePannel.js'
+import MainContent from './mainContent.js'
 
 export default {
     components: {
-        'ui-header': Header,
-        'ui-content': Content,
-        'ui-tag': Tag,
-        'column-container': ColumnContainer
+        'side-pannel': SidePannel,
+        'main-content': MainContent
     },
     template: `
         <div
-            id="ui-wrapper"
+            id="wrapper"
             :class="wrapperClass"
             :style="wrapperStyle"
             :ref="el => wrapper = el"
         >
 
-            <ui-header />
-            <ui-content>
-                <ui-tag />
-                <column-container :data="data" />
-            </ui-content>
+            <side-pannel />
+            <main-content />
 
         </div>
     `,
@@ -38,7 +31,7 @@ export default {
 
 
         // class
-        const wrapperClass = 'w-[60%] mx-auto'
+        const wrapperClass = 'w-full h-full'
 
 
         // style
