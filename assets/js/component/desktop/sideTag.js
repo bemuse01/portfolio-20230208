@@ -13,23 +13,27 @@ export default {
                 <span>TAG</span>
             </div>
 
-            <label
+            <div
                 v-for="item in items"
                 key="item.key"
                 :class="tagClass + checkedTagClass(item.key)"
             >
                 
-                <span>{{upperLetter(item.value)}}</span>
+                <label 
+                    :class="textHoverClass" 
+                    :for="item.id"
+                >{{upperLetter(item.value)}}</label>
                 
                 <input 
                     type="radio"
+                    :id="item.id"
                     :class="inputClass"
                     :value="item.value"
                     :name="item.name"
                     v-model="checked"
                 />
 
-            </label>
+            </div>
 
         </div>
     `,
@@ -40,7 +44,6 @@ export default {
 
         // store
         const store = useStore()
-        // const getChecked = computed(() => store.getters['content/getCheckedTag'])
 
 
         // variable
@@ -56,10 +59,11 @@ export default {
 
 
         // class
-        const rootClass = `side-tag w-[100%] p-0 ${titleFontColor}`
+        const rootClass = `side-tag w-[100%] py-3 ${titleFontColor}`
         const titleClass = `${defaultFontStyle}`
-        const tagClass = `${defaultFontStyle} block cursor-pointer`
+        const tagClass = `${defaultFontStyle}`
         const inputClass = 'hidden'
+        const textHoverClass = `cursor-pointer hover:${mainFontColor2}`
 
 
         // computed
@@ -81,6 +85,7 @@ export default {
             inputClass,
             checkedTagClass,
             upperLetter,
+            textHoverClass
         }
     }
 }

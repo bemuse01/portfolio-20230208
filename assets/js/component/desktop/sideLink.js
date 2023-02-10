@@ -1,0 +1,65 @@
+import {defaultFontStyle, mainFontColor2, mainFontColor, titleFontColor} from '../../data/config.js'
+import Data from '../../data/data.js'
+
+import Method from '../../method/method.js'
+
+export default {
+    template: `
+        <div
+            :class="rootClass"
+        >
+
+            <div :class="titleClass">
+                <span>LINK</span>
+            </div>
+
+            <div
+                v-for="item in items"
+                key="item.key"
+                :class="linkClass"
+            >
+                
+                <a 
+                    :href="item.href" 
+                    :target="item.target"
+                    :class="textHoverClass"
+                >
+                    {{upperLetter(item.name)}}
+                </a>
+                
+            </div>
+
+        </div>
+    `,
+    setup(){
+        const {ref, watch, computed} = Vue
+
+
+        // variable
+        const {marks} = Data
+        const items = ref(marks.map((mark, idx) => ({
+            key: idx,
+            name: mark.name,
+            href: mark.link,
+            target: mark.name === 'home' ? '' : '_blank'
+        })))
+        const upperLetter = computed(() => (str) => str.toUpperCase())
+
+
+        // class
+        const rootClass = `side-link w-[100%] py-3 ${titleFontColor}`
+        const titleClass = `${defaultFontStyle}`
+        const linkClass = `${defaultFontStyle} ${mainFontColor}`
+        const textHoverClass = `hover:${mainFontColor2} cursor-pointer`
+
+
+        return{
+            items,
+            rootClass,
+            titleClass,
+            linkClass,
+            upperLetter,
+            textHoverClass
+        }
+    }
+}

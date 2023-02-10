@@ -1,14 +1,17 @@
+import SideLink from './sideLink.js'
 import SideTag from './sideTag.js'
 
 export default {
     components: {
-        'side-tag': SideTag
+        'side-tag': SideTag,
+        'side-link': SideLink
     },
     template: `
         <div 
             :class="contentClass"
         >
 
+            <side-link />
             <side-tag />
 
         </div>
