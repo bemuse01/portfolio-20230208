@@ -1,8 +1,6 @@
 import {defaultFontStyle, mainFontColor2, mainFontColor, titleFontColor} from '../../data/config.js'
 import Data from '../../data/data.js'
 
-import Method from '../../method/method.js'
-
 export default {
     template: `
         <div
@@ -32,7 +30,7 @@ export default {
         </div>
     `,
     setup(){
-        const {ref, watch, computed} = Vue
+        const {ref, computed} = Vue
 
 
         // variable
@@ -40,7 +38,7 @@ export default {
         const items = ref(marks.map((mark, idx) => ({
             key: idx,
             name: mark.name,
-            href: mark.link,
+            href: mark.url,
             target: mark.name === 'home' ? '' : '_blank'
         })))
         const upperLetter = computed(() => (str) => str.toUpperCase())

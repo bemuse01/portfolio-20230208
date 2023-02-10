@@ -1,4 +1,3 @@
-@import url('./header.css');
 @import url('./anim.css');
 
 /* @font-face {
@@ -61,10 +60,16 @@ div#wrap{
 }
 a{
     text-decoration: none;
+    outline: none;
+    border: none;
 }
 a:active{
     text-decoration: none;
+    outline: none;
+    border: none;
 }
 a:visited{
     text-decoration: none;
+    outline: none;
+    border: none;
 }

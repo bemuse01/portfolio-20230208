@@ -18,10 +18,15 @@ export default {
                 :key="item.key"
                 :class="item.className.cell"
             >
-                <img
-                    :src="item.src"
-                    :class="item.className.img"
-                />
+                <a
+                    :href="item.href"
+                    target="_blank"
+                >
+                    <img
+                        :src="item.src"
+                        :class="item.className.img"
+                    />
+                </a>
             </cell>
 
         </div>       
@@ -42,6 +47,7 @@ export default {
                 key: Method.uuidv4(),
                 type: item.type,
                 src: thumbPath + item.thumbPath,
+                href: item.url,
                 className: {
                     cell: 'overflow-hidden aspect-square cursor-pointer',
                     img: 'w-full aspect-auto hover:scale-105 duration-200 object-center'

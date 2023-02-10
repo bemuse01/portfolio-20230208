@@ -20,9 +20,6 @@ export default {
         </div>
     `,
     setup(){
-        const {} = Vue
-
-
         // class
         const sideClass = `w-[${sidePannelWidth}] h-full flex flex-col ${sidePannelBgColor} fixed top-0 left-0`
 
