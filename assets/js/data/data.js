@@ -74,6 +74,11 @@ export default {
             url: 'https://bemuse01.github.io/audio-visualizer-v.20221020/'
         },
         {
+            type: 'three',
+            thumbPath: 'three-shader-20220105.png',
+            url: 'https://bemuse01.github.io/test-three-v.20220105/'
+        },
+        {
             type: 'babylon',
             thumbPath: 'babylon-visualizer-20221205.png',
             url: 'https://bemuse01.github.io/test-babylon-20221205/'
@@ -92,6 +97,6 @@ export default {
             type: 'babylon',
             thumbPath: 'babylon-visualizer-20230126.png',
             url: 'https://bemuse01.github.io/babylon-audio-visualizer-20230126/'
-        }
+        },
     ]
 }
