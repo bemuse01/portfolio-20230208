@@ -1,21 +1,21 @@
-import {sidePannelBgColor, sidePannelWidth} from '../../data/config.js'
+import {sidePannelBgColor, sidePannelWidth} from '../../config.js'
 
 import SideHead from './sideHead.js'
-import SideContent from './sideContent.js'
+import SideBody from './sideBody.js'
 
 export default {
     components: {
         'side-head': SideHead,
-        'side-content': SideContent  
+        'side-body': SideBody  
     }, 
     template: `
         <div
-            id="side"
+            id="side-pannel"
             :class="sideClass"
         >
             
             <!--<side-head />-->
-            <side-content />
+            <side-body />
         
         </div>
     `,

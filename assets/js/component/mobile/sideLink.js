@@ -1,4 +1,4 @@
-import {desktopDefaultFontStyle, mainFontColor2, mainFontColor, titleFontColor} from '../../config.js'
+import {mobileDefaultFontStyle, mainFontColor2, mainFontColor, titleFontColor} from '../../config.js'
 import Data from '../../data/data.js'
 
 export default {
@@ -46,8 +46,8 @@ export default {
 
         // class
         const rootClass = `side-link w-[100%] py-3 ${titleFontColor}`
-        const titleClass = `${desktopDefaultFontStyle}`
-        const linkClass = `${desktopDefaultFontStyle} ${mainFontColor}`
+        const titleClass = `${mobileDefaultFontStyle}`
+        const linkClass = `${mobileDefaultFontStyle} ${mainFontColor}`
         const textHoverClass = `hover:${mainFontColor2} cursor-pointer`
 
 

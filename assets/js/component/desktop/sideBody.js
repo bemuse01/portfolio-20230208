@@ -18,7 +18,7 @@ export default {
     `,
     setup(){
         // class
-        const contentClass = 'side-content flex-1 p-4'
+        const contentClass = 'side-body flex-1 p-4'
 
 
         return{

@@ -1,5 +1,11 @@
+import Wrapper from './wrapper.js'
+// import CanvasWrapper from './canvasWrapper.js'
+
+
 export default {
     components: {
+        'wrapper': Wrapper,
+        // 'canvas-wrapper': CanvasWrapper
     },
     template: `
         <div 
@@ -7,27 +13,25 @@ export default {
             :style="layoutStyle"
         >
 
+            <wrapper />
+
         </div>
     `,
     setup(){
-        const {ref, onMounted} = Vue
+        const {ref} = Vue
 
 
         // style
         const layoutStyle = ref({
+            position: 'relative',
             width: '100%',
-            height: '100%'
-        })
-
-
-        // mounted
-        onMounted(() => {
-
+            height: '100%',
+            // backgroundColor: '#eee'
         })
 
 
         return{
-            layoutStyle
+            layoutStyle,
         }
     }
 }

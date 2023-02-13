@@ -1,4 +1,4 @@
-import {desktopDefaultFontStyle, mainFontColor2, mainFontColor, titleFontColor} from '../../config.js'
+import {mobileDefaultFontStyle, mainFontColor2, mainFontColor, titleFontColor} from '../../config.js'
 import Data from '../../data/data.js'
 
 import Method from '../../method/method.js'
@@ -61,8 +61,8 @@ export default {
 
         // class
         const rootClass = `side-tag w-[100%] py-3 ${titleFontColor}`
-        const titleClass = `${desktopDefaultFontStyle}`
-        const tagClass = `${desktopDefaultFontStyle}`
+        const titleClass = `${mobileDefaultFontStyle}`
+        const tagClass = `${mobileDefaultFontStyle}`
         const inputClass = 'hidden'
         const textHoverClass = `cursor-pointer hover:${mainFontColor2}`
 

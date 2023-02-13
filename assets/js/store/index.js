@@ -1,4 +1,5 @@
 import ContentStore from './content.js'
+import SideStore from './side.js'
 
 export default Vuex.createStore({
     state: {
@@ -10,6 +11,7 @@ export default Vuex.createStore({
     actions: {
     },
     modules: {
-        content: ContentStore
+        content: ContentStore,
+        side: SideStore
     }
 })

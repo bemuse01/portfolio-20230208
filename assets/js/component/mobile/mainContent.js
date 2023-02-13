@@ -1,4 +1,4 @@
-import {mainContentBgColor, sidePannelWidth} from '../../config.js'
+import {mainContentBgColor, headerHeight} from '../../config.js'
 import GridContainer from './gridContainer.js'
 
 import Data from '../../data/data.js'
@@ -23,7 +23,7 @@ export default {
         
         // class
         const {repo} = Data
-        const mainClass = `absolute top-0 right-0 w-[calc(100%-${sidePannelWidth})] h-[auto]`
+        const mainClass = `relative w-full h-auto`
 
 
         return{
