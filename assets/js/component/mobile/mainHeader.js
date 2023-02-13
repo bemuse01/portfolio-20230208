@@ -10,7 +10,11 @@ export default {
             :class="headerClass"
         >
 
-            <button :class="buttonClass" @click="onButtonClick"></button>
+            <button :class="buttonClass" @click="onButtonClick">
+                <div :class="buttonChildClass"></div>
+                <div :class="buttonChildClass"></div>
+                <div :class="buttonChildClass"></div>
+            </button>
             
         </div>
     `,
@@ -26,7 +30,8 @@ export default {
 
         // class
         const headerClass = `w-full h-[${headerHeight}] flex flex-row-reverse ${sidePannelBgColor} sticky top-0 z-[9999] p-3`
-        const buttonClass = 'w-auto h-full aspect-square'
+        const buttonClass = 'w-auto h-full aspect-square flex flex-col gap-2.5 py-1'
+        const buttonChildClass = 'w-full bg-[rgb(230,230,230)] flex-1 rounded-sm'
 
 
         // method
@@ -41,6 +46,7 @@ export default {
         return{
             headerClass,
             buttonClass,
+            buttonChildClass,
             onButtonClick
         }
     }

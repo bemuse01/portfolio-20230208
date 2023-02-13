@@ -2,17 +2,20 @@ import {sidePannelBgColor, sidePannelWidth} from '../../config.js'
 
 import SideLink from './sideLink.js'
 import SideTag from './sideTag.js'
+import SideCancel from './sideCancel.js'
 
 export default {
     components: {
         'side-tag': SideTag,
-        'side-link': SideLink
+        'side-link': SideLink,
+        'side-cancel': SideCancel
     },
     template: `
         <div 
             :class="bodyClass"
         >
 
+            <side-cancel />
             <side-link />
             <side-tag />
 

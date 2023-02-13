@@ -17,7 +17,7 @@ const sideHeadHeight = '50px'
 const titleFontColor = 'text-cyan-300'
 const mainFontColor = 'text-slate-500'
 const mainFontColor2 = 'text-slate-200'
-const desktopDefaultFontStyle = 'py-0.5 text-[1rem] tracking-wider'
+const desktopDefaultFontStyle = 'py-0.5 text-[1.2rem] tracking-wider'
 const mobileDefaultFontStyle = 'py-0.5 text-[1.8rem] tracking-wider'
 
 export {imgPath, thumbPath, markPath, bgColor, mainContentBgColor, sidePannelBgColor, sidePannelWidth, sideHeadHeight, mainFontColor, titleFontColor, desktopDefaultFontStyle, mobileDefaultFontStyle, mainFontColor2, headerHeight}
