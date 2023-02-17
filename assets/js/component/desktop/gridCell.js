@@ -1,7 +1,7 @@
 import CellImage from './cellImage.js'
 
-const observerCallback = (entries, loaded) => {
-    entries.forEach(() => loaded.value = true)
+const observerCallback = (entries, imgSrc, newSrc) => {
+    entries.forEach(() => imgSrc.value = newSrc.value)
 }
 
 export default {
@@ -15,7 +15,7 @@ export default {
     template: `
         <div :style="cellStyle" :ref="el => cell = el">
 
-            <cell-image :href="href" :src="src"/>
+            <cell-image :href="href" :src="imgSrc"/>
 
         </div>
     `,
@@ -31,7 +31,8 @@ export default {
         const cell = ref()
         const time = ~~(Math.random() * 300 + 300)
         const loaded = ref(false)
-        const observer = new IntersectionObserver((entries) => observerCallback(entries, loaded))
+        const observer = new IntersectionObserver((entries) => observerCallback(entries, imgSrc, src))
+        const imgSrc = ref('')
 
 
         // style
@@ -75,7 +76,7 @@ export default {
             cell,
             cellStyle,
             href,
-            src
+            imgSrc
         }
     }
 }
