@@ -75,6 +75,11 @@ export default {
         },
         {
             type: 'three',
+            thumbPath: 'three-visualizer-20220418.png',
+            url: 'https://bemuse01.github.io/three-audio-visualizer-20220418/'
+        },
+        {
+            type: 'three',
             thumbPath: 'three-shader-20220105.png',
             url: 'https://bemuse01.github.io/test-three-v.20220105/'
         },
