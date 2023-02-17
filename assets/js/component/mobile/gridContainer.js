@@ -19,8 +19,10 @@ export default {
                 v-for="(item, idx) in items"
                 :key="item.key"
                 :class="item.className.cell"
+                :href="item.href"
+                :src="item.src"
             >
-                <a
+                <!--<a
                     :href="item.href"
                     target="_blank"
                 >
@@ -29,7 +31,7 @@ export default {
                         :class="item.className.img"
                         loading="lazy"
                     />
-                </a>
+                </a>-->
             </cell>
 
         </div>       

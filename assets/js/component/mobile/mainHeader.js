@@ -30,7 +30,7 @@ export default {
 
         // class
         const headerClass = `w-full h-[${headerHeight}] flex flex-row-reverse ${sidePannelBgColor} sticky top-0 z-[9999] p-3`
-        const buttonClass = 'w-auto h-full aspect-square flex flex-col gap-2.5 py-1'
+        const buttonClass = 'w-auto h-full aspect-square flex flex-col gap-1.5 py-1'
         const buttonChildClass = 'w-full bg-[rgb(230,230,230)] flex-1 rounded-sm'
 
 
