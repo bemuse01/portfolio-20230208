@@ -19,8 +19,10 @@ export default {
                 v-for="(item, idx) in items"
                 :key="item.key"
                 :class="item.className.cell"
+                :src="item.src"
+                :href="item.href"
             >
-                <a
+                <!--<a
                     :href="item.href"
                     target="_blank"
                 >
@@ -29,7 +31,7 @@ export default {
                         :class="item.className.img"
                         loading="lazy"
                     />
-                </a>
+                </a>-->
             </cell>
 
         </div>       
@@ -42,6 +44,20 @@ export default {
         // store
         const store = useStore()
         const getCheckedTag = computed(() => store.getters['content/getCheckedTag'])
+
+
+        // variable
+        const {repo} = toRefs(props)
+        // const data = ref(Data.repo)
+        const items = computed(() => {
+            return getCheckedTag.value === 'all' ? 
+            createItems(repo) : 
+            createItems(repo).filter(item => item.type === getCheckedTag.value)
+        })
+
+
+        // class
+        const containerClass = `w-full grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 ${mainContentBgColor} overflow-y-auto overflow-x-hidden`
 
 
         // method
@@ -59,23 +75,9 @@ export default {
         }
 
 
-        // variable
-        const {repo} = toRefs(props)
-        // const data = ref(Data.repo)
-        const items = computed(() => {
-            return getCheckedTag.value === 'all' ? 
-            createItems(repo) : 
-            createItems(repo).filter(item => item.type === getCheckedTag.value)
-        })
-
-
-        // class
-        const containerClass = `w-full grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 ${mainContentBgColor} overflow-y-auto overflow-x-hidden`
-
-
         return{
             containerClass,
-            items
+            items,
         }
     }
 }
