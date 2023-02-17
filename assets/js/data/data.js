@@ -84,6 +84,11 @@ export default {
             url: 'https://bemuse01.github.io/test-three-v.20220105/'
         },
         {
+            type: 'three',
+            thumbPath: 'deemo-x-hololive.png',
+            url: 'https://bemuse01.github.io/deemo-x-hololive/'
+        },
+        {
             type: 'babylon',
             thumbPath: 'babylon-visualizer-20221205.png',
             url: 'https://bemuse01.github.io/test-babylon-20221205/'
