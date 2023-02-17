@@ -24,7 +24,9 @@ export default {
                 />
             </a>
 
-            <cell-loading v-if="!loaded" />
+            <transition name="fade">
+                <cell-loading v-if="!loaded" />
+            </transition>
 
         </div>
     `,
