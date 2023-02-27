@@ -85,7 +85,7 @@ export default {
         },
         {
             type: 'three',
-            thumbPath: 'arknights-20220128',
+            thumbPath: 'arknights-20220128.png',
             url: 'https://bemuse01.github.io/Arknights-v.20220128/'
         },
         {
