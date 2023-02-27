@@ -85,6 +85,11 @@ export default {
         },
         {
             type: 'three',
+            thumbPath: 'arknights-20220128',
+            url: 'https://bemuse01.github.io/Arknights-v.20220128/'
+        },
+        {
+            type: 'three',
             thumbPath: 'deemo-x-hololive.png',
             url: 'https://bemuse01.github.io/deemo-x-hololive/'
         },
