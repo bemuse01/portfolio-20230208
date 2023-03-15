@@ -32,6 +32,15 @@
     font-family: RobotoLight;
     src: url('../src/font/Roboto-Light.ttf');
 }
+@font-face {
+    font-family: NotoSansKRLight;
+    src: url('../src/font/NotoSansKR-Light.otf');
+}
+@font-face {
+    font-family: NotoSansKRRegular;
+    src: url('../src/font/NotoSansKR-Regular.otf');
+}
+
 
 
 *{

@@ -20,6 +20,8 @@ export default {
                 :key="item.key"
                 :class="item.className.cell"
                 :src="item.src"
+                :title="item.title"
+                :desc="item.desc"
                 :href="item.href"
             >
                 <!--<a
@@ -67,6 +69,8 @@ export default {
                 type: item.type,
                 src: thumbPath + item.thumbPath,
                 href: item.url,
+                title: item.title,
+                desc: item.desc,
                 className: {
                     cell: 'overflow-hidden aspect-square cursor-pointer',
                     img: 'w-full aspect-auto hover:scale-105 duration-200 object-center'

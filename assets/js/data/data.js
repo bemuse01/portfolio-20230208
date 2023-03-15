@@ -44,7 +44,7 @@ export default {
             thumbPath: 'three-rain-20220916.png',
             url: 'https://bemuse01.github.io/test-shader-v.20220916/',
             title: 'Rain2',
-            desc: `비가 오는 느낌을 낸 2D 그래픽 \n (1과 차이점은 빗방울의 경로)`
+            desc: `비가 오는 느낌을 낸 2D 그래픽 (1과 차이점은 빗방울의 경로)`
         },
         {
             type: 'three',

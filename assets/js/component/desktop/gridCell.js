@@ -1,4 +1,5 @@
 import CellImage from './cellImage.js'
+import CellCover from './cellCover.js'
 
 const observerCallback = (entries, imgSrc, newSrc) => {
     entries.forEach(() => imgSrc.value = newSrc.value)
@@ -6,16 +7,28 @@ const observerCallback = (entries, imgSrc, newSrc) => {
 
 export default {
     components: {
-        'cell-image': CellImage  
+        'cell-image': CellImage,
+        'cell-cover': CellCover
     },
     props: {
         href: String,
         src: String,
+        title: String,
+        desc: String
     },
     template: `
-        <div :style="cellStyle" :ref="el => cell = el">
+        <div 
+            :style="cellStyle" 
+            :ref="el => cell = el"
+            @mouseover="onMouseover"
+            @mouseleave="onMouseleave"
+        >
 
             <cell-image :href="href" :src="imgSrc"/>
+
+            <transition name="fade-04s">
+                <cell-cover :title="title" :desc="desc" v-show="showCover"/>
+            </transition>
 
         </div>
     `,
@@ -24,8 +37,7 @@ export default {
 
 
         // props
-        const {href, src} = toRefs(props)
-
+        const {href, src, title, desc} = toRefs(props)
 
         // variable
         const cell = ref()
@@ -33,6 +45,7 @@ export default {
         const loaded = ref(false)
         const observer = new IntersectionObserver((entries) => observerCallback(entries, imgSrc, src))
         const imgSrc = ref('')
+        const showCover = ref(false)
 
 
         // style
@@ -40,11 +53,18 @@ export default {
             opacity: '0',
             transform: 'translate(0, -2rem)',
             transition: '0.6s',
-            display: 'flex'
+            display: 'flex',
+            position: 'relative'
         })
 
 
         // method
+        const onMouseover = () => {
+            showCover.value = true
+        }
+        const onMouseleave = () => {
+            showCover.value = false
+        }
         const addElementToObserver = () => {
             observer.observe(cell.value)
         }
@@ -76,7 +96,12 @@ export default {
             cell,
             cellStyle,
             href,
-            imgSrc
+            imgSrc,
+            title,
+            desc,
+            showCover,
+            onMouseover,
+            onMouseleave
         }
     }
 }
