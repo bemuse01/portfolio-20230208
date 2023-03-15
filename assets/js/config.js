@@ -9,7 +9,7 @@ const mainContentBgColor = 'bg-neutral-800'
 const sidePannelBgColor = 'bg-neutral-900'
 
 // size
-const sidePannelWidth = '17rem'
+const sidePannelWidth = '272px'
 const headerHeight = '50px'
 const sideHeadHeight = '50px'
 
@@ -17,7 +17,7 @@ const sideHeadHeight = '50px'
 const titleFontColor = 'text-cyan-300'
 const mainFontColor = 'text-slate-500'
 const mainFontColor2 = 'text-slate-200'
-const desktopDefaultFontStyle = 'py-0.5 text-[1.2rem] tracking-wider'
-const mobileDefaultFontStyle = 'py-0.5 text-[1.6rem] tracking-wider'
+const desktopDefaultFontStyle = 'py-0.5 text-[19.2px] tracking-wider' // 1.2rem
+const mobileDefaultFontStyle = 'py-0.5 text-[25.6px] tracking-wider' // 1.6rem
 
 export {imgPath, thumbPath, markPath, bgColor, mainContentBgColor, sidePannelBgColor, sidePannelWidth, sideHeadHeight, mainFontColor, titleFontColor, desktopDefaultFontStyle, mobileDefaultFontStyle, mainFontColor2, headerHeight}

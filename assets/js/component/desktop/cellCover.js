@@ -35,7 +35,7 @@ export default {
 
 
         // class
-        const wrapperClass = 'w-full h-full p-14 absolute flex flex-col bg-[rgba(0,0,0,0.75)] justify-center items-center text-white text-center text-xl'
+        const wrapperClass = 'w-full h-full p-14 absolute flex flex-col bg-[rgba(0,0,0,0.75)] justify-center items-center text-white text-center text-lg'
         
 
         // style

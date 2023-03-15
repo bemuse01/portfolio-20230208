@@ -59,7 +59,7 @@ export default {
 
 
         // class
-        const containerClass = `w-full grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 ${mainContentBgColor} overflow-y-auto overflow-x-hidden`
+        const containerClass = `w-full grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 ${mainContentBgColor} overflow-y-auto overflow-x-hidden`
 
 
         // method
