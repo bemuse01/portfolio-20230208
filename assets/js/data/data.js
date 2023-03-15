@@ -44,7 +44,7 @@ export default {
             thumbPath: 'three-rain-20220916.png',
             url: 'https://bemuse01.github.io/test-shader-v.20220916/',
             title: 'Rain2',
-            desc: `비가 오는 느낌을 낸 2D 그래픽 (1과 차이점은 빗방울의 경로)`
+            desc: `비가 오는 느낌을 낸 2D 그래픽 \n (1과 차이점은 빗방울의 경로)`
         },
         {
             type: 'three',
@@ -128,7 +128,7 @@ export default {
             thumbPath: 'babylon-visualizer-20221205.png',
             url: 'https://bemuse01.github.io/test-babylon-20221205/',
             title: 'Audio Visualizer',
-            desc: '파티클이 모여서 형성된 고리 모양의 2D 오디오 시각화 (Babylon.js 사용)'
+            desc: '파티클이 모여서 형성된 고리 모양의 2D 오디오 시각화 \n (Babylon.js 사용)'
         },
         {
             type: 'babylon',
@@ -149,7 +149,7 @@ export default {
             thumbPath: 'babylon-visualizer-20230126.png',
             url: 'https://bemuse01.github.io/babylon-audio-visualizer-20230126/',
             title: 'Audio Visualizer',
-            desc: '체적 빛 효과가 사용된 정육면체 모양의 3D 오디오 시각화 (Babylon.js 사용)'
+            desc: '체적 빛 효과가 사용된 정육면체 모양의 3D 오디오 시각화 \n (Babylon.js 사용)'
         },
     ]
 }

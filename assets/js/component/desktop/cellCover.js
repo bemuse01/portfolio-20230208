@@ -8,23 +8,34 @@ export default {
             :class="wrapperClass"
             :style="wrapperStyle"
         >
+
             <span>{{title}}</span>
+
             <br />
-            <span>{{desc}}</span>
+
+            <span
+                v-for="desc of descs"
+                :key="desc.key"
+            >
+                {{desc.txt}}
+            </span>
+
         </div>
     `,
     setup(props){
-        const {ref, toRefs} = Vue
+        const {ref, toRefs, computed} = Vue
 
 
         // variables
         const {title, desc} = toRefs(props)
-
-        console.log(title, desc)
+        const descs = computed(() => desc.value.split('\n').map((txt, key) => ({
+            key,
+            txt
+        })))
 
 
         // class
-        const wrapperClass = 'w-full h-full p-12 absolute flex flex-col bg-[rgba(0,0,0,0.75)] justify-center items-center text-white text-center text-xl'
+        const wrapperClass = 'w-full h-full p-14 absolute flex flex-col bg-[rgba(0,0,0,0.75)] justify-center items-center text-white text-center text-xl'
         
 
         // style
@@ -37,7 +48,7 @@ export default {
             wrapperClass,
             wrapperStyle,
             title,
-            desc
+            descs
         }
     }
 }
