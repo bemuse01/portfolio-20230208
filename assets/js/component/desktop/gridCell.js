@@ -26,9 +26,9 @@ export default {
 
             <cell-image :href="href" :src="imgSrc"/>
 
-            <transition name="fade-04s">
+            <!--<transition name="fade-04s">
                 <cell-cover :title="title" :desc="desc" v-show="showCover"/>
-            </transition>
+            </transition>-->
 
         </div>
     `,
